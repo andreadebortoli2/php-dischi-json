@@ -1,3 +1,22 @@
+:root {
+    --header-bg: #06131F;
+    --main-bg: #1D2D3C;
+    --card-bg: #112030;
+}
+
 body {
-    background-color: palegreen;
+
+    header {
+        background-color: var(--header-bg);
+        height: 3rem;
+    }
+
+    main {
+        background-color: var(--main-bg);
+
+        .card {
+            background-color: var(--card-bg);
+            color: white;
+        }
+    }
 }
