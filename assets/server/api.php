@@ -1,6 +1,6 @@
 <?php
 
-$albums = [
+/* $albums = [
     [
         "title" => "New Jersey",
         "author" => "Bon Jovi",
@@ -20,4 +20,10 @@ $albums = [
 $json_albums = json_encode($albums);
 header('Content-Type: application/json');
 // var_dump($json_albums);
+echo $json_albums; */
+
+$albums = file_get_contents('dischi.json');
+$php_albums = json_decode($albums);
+$json_albums = json_encode($php_albums);
+header('Content-Type: application/json');
 echo $json_albums;
