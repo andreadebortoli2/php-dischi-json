@@ -25,8 +25,8 @@
         <main>
             <div class="container">
                 <div class="row">
-                    <div class="col-4 g-4" v-for="album in albums">
-                        <div class="card py-3 px-5">
+                    <div class="col-4 g-4" v-for="(album,index) in albums">
+                        <div class="card py-3 px-5 border-0 h-100" data-bs-toggle="modal" data-bs-target="#my_modal" @click="getAlbumData(index)">
                             <img class="card-img-top w-75 mx-auto" :src="album.poster" :alt="`cover of the album ${album.title} from ${album.author}`" />
                             <div class="card-body text-center">
                                 <h4 class="card-title">{{album.title}}</h4>
@@ -35,6 +35,21 @@
                             </div>
                         </div>
 
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="my_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content border-0">
+                        <div class="modal-body text-center">
+                            <img class="w-75 mx-auto" :src="modalData.poster" alt="`cover of the album ${modalData.title} from ${modalData.author}`">
+                            <h4 class="pt-4">{{modalData.title}}</h4>
+                            <p>{{modalData.author}}</p>
+                            <h5>{{modalData.year}}</h5>
+                        </div>
                     </div>
                 </div>
             </div>

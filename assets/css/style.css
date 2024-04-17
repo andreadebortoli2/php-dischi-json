@@ -2,6 +2,8 @@
     --header-bg: #06131F;
     --main-bg: #1D2D3C;
     --card-bg: #112030;
+    --text-color: #ffffff;
+    --modal-fade: #1d2d3cb1;
 }
 
 body {
@@ -16,7 +18,16 @@ body {
 
         .card {
             background-color: var(--card-bg);
-            color: white;
+            color: var(--text-color);
+        }
+
+        .modal-content {
+            background-color: transparent;
+            color: var(--text-color);
+        }
+
+        .fade {
+            background-color: var(--modal-fade);
         }
     }
 }
